@@ -93,7 +93,7 @@ ts id
 char *reverse_string(char *str){
 	int len = strlen(str);
 
-	if (len<=1){
+	if (len <= 1){
 		return NULL;
 	}
 
@@ -102,15 +102,16 @@ char *reverse_string(char *str){
 		char temp = str[0];
 		str[0] = str[len - 1];
 		str[len - 1] = '\0';
-		 reverse_string(str + 1);
+		reverse_string(str + 1);
 		str[len - 1] = temp;
-		
+
 	}
 	return  str;
 
 }
 int main(){
-	char arr[] = "I am a student";
+	char arr[100];
+	gets(arr);
 	reverse_string(arr);
 	printf("%s", &arr);
 	return 0;
