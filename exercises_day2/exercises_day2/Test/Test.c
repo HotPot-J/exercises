@@ -58,29 +58,50 @@
 请根据这个假设，如果反转后整数溢出那么就返回 0。
 */
 //计算机里： -2^23 = （1111）符号位  1000 0000 0000 0000 0000 0000 0000 0000
-int reverse(int x)
-{
-	int temp;
-	//int i;
-	long c = 0;
-
-	while (x != 0)
-	{
-		temp = x % 10;
-		x = x / 10;
-		c = temp + c * 10;
-		if (c>0x7fffffff || c<(signed int)0x80000000)
-		{
-			return 0;
-		}
-	
+//int reverse(int x)
+//{
+//	int temp;
+//	//int i;
+//	long c = 0;
+//
+//	while (x != 0)
+//	{
+//		temp = x % 10;
+//		x = x / 10;
+//		c = temp + c * 10;
+//		if (c>0x7fffffff || c<(signed int)0x80000000)
+//		{
+//			return 0;
+//		}
+//	
+//	}
+//
+//
+//	return c;
+//
+//}
+//int main(){
+//
+//	printf("%d", reverse(-123));
+//}
+char *reverse_string(char *String,int len){
+	char *string = String;
+	int right = len - 2; //不用交换数组最后的\0
+	int left = 0;
+	int temp; //做交换的中间变量
+	while (left < right){    //交换
+		temp = string[left];
+		string[left] = string[right];
+		string[right] = temp;
+		left++;
+		right--;
 	}
-
-
-	return c;
-
+	return  string; 
 }
-int main(){
 
-	printf("%d", reverse(-123));
-}
+	int main(){
+		char arr[] = "jiaxinyu";
+		int  len = sizeof(arr) / sizeof(arr[0]);
+		reverse_string(arr,len);
+		printf("%s", arr);
+	}
