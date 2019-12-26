@@ -18,6 +18,9 @@
 #include<stdio.h>
 int fun(int tmp){
 	int flag= 0;
+	if (tmp == 0){
+		return 1;
+	}
 	while (tmp){
 		flag++;
 		tmp = tmp / 10;
@@ -60,7 +63,7 @@ int fun(int tmp){
 		 }//111222
 		 arr[size1] = ':';  
 
-		 tmp = (n- size1*3600)/60;
+		 tmp = (n- tmp2*3600)/60;
 		 tmp3 = tmp;
 		 size2 = fun(tmp);
 		 r = size1+size2;

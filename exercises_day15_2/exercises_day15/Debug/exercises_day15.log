@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/12/25 23:45:56。
+﻿生成启动时间为 2019/12/26 15:16:52。
      1>项目“D:\a蓝桥杯\练习题目\exercises_day15\exercises_day15\exercises_day15.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\vc2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Test.c
@@ -10,4 +10,4 @@
 
 生成成功。
 
-已用时间 00:00:00.75
+已用时间 00:00:00.53
