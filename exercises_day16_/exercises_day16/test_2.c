@@ -21,6 +21,7 @@
 	  　　先筛出所有素数，然后再分解。
 */
 #include<stdio.h>
+#include<stdlib.h>
 int fun(int tmp){
 	int i = 0;
 	int flag = 0;
@@ -34,7 +35,7 @@ int fun(int tmp){
 	}
 	return 1;//是素数
 }
-int fun1(char* arr,int tmp){
+int fun1(int tmp){
 	int i = 0;
 	for (i = 2; i <= (tmp / 2); i++){
 		if (tmp%i == 0){
@@ -44,47 +45,38 @@ int fun1(char* arr,int tmp){
 	return i;
 }
 
-int fun2(char *arr, int tmp){
+void   fun2(int tmp){
 		int i = 0;
-		int j = 2;
+		int j = 0;
 		int tmp1 = 0;
 		while (1){
-			tmp1 =  fun1(arr, tmp);
-			arr[j++] = tmp1+'0';
-			arr[j++] = '*';
+			tmp1 =  fun1(tmp);
+			printf("%d", tmp1);
+			printf("*");
 			tmp = tmp / tmp1;
 			if (fun(tmp)){ //如果tmp是素数
-				arr[j] = tmp+'0';
+				printf("%d\n", tmp);
 				break;
 			}
 		}
-		return j;
 	}
 
 
 
 int main(){
 	int a = 0, b = 0;
-	int i = 0, tmp = 0, j = 0, ret = 0;
-	char arr[100000] = { '0' };
+	int i = 0, tmp = 0;
 	scanf("%d%d", &a,&b);
-	
-	for (i = a; i <= b; i++){
+	i = a;
+	for (i; i <= b; i++){
 		tmp = i;
 		if (fun(tmp)){//是素数
 			printf("%d=%d\n", tmp,tmp);
 		}
 		else{
-			arr[0] = tmp;
-			arr[1] = '=';
-			ret = fun2(arr, tmp);
-			for (j = 0; j <= ret; j++){ //将arr置新
-				printf("%c", arr[j]);
-			}
-			printf("\n");
-			for (j = 0; j <= ret; j++){ //将arr置新
-				arr[j] = '0';
-			}
+		printf("%d=", tmp);
+         fun2(tmp);
+
 		}
 	}
 	return 0;
